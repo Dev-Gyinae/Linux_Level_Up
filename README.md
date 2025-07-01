@@ -31,7 +31,7 @@ Project 3: Archive Files (Easy Auditing of files)
 -----------------------------------------------------------------------
 This script archives log files from a specified directory within a given date range (YYYY-MM-DD to YYYY-MM-DD), automatically organizing them into a dated folder at /tmp for audit purposes, while preserving the original directory structure.
 
-eg. $ sudo ./archive_files_by_date.sh /var/log/nginx 2024-01-01 2025-01-01
+eg. $ sudo ./archive_files_by_date.sh /var/log/nginx 2024-01-01 2025-01-01 </br>
        sudo [script] [target directory] [from: date] [to: date]
 
 ![image](https://github.com/user-attachments/assets/08aad6b5-b71e-497f-9c2e-6275c1aa0608)
