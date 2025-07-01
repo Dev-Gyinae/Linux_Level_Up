@@ -1,2 +1,10 @@
 # Linux_Level_Up
-A repo dedicated to bash and shell scripting 
+
+------ Project 1: Network Packet Monitoring ---------
+-----------------------------------------------------
+This script monitors network traffic on a specific port for 3 seconds and reports the number of packets transmitted. Useful for checking active connections, debugging services, or monitoring suspicious activity.
+
+sudo ./port_monitor.sh PORT_NUMBER eg.  sudo ./port_monitor.sh 2020
+
+(Root access is necessary because of TCPdumps scanning)
+
