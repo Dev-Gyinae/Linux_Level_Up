@@ -43,6 +43,27 @@ eg. $ sudo ./archive_files_by_date.sh /var/log/nginx 2024-01-01 2025-01-01 </br>
 Project 4: Backup Cron 2.0
 -----------------------------------------------------------------------
 
+This project sets up a daily cron job at 2 AM to back up log files from /var/log/ to /backups/ in a compressed .tar.gz archive.
+
+Key Features:
+✅ Automatic Daily Backups
+
+Runs via cron at 2 AM
+Saves to /backups/logs_YYYYMMDD.tar.gz (dated filename)
+
+Includes:
+* System logs (syslog, auth.log, kern.log, etc.)
+* Application logs (*.log in /var/log/)
+
+✅ Manual Execution Option
+
+* Run on-demand backups with progress display
+*  Shows exactly which files are copied
+
+✅ Easy Setup
+Installs cron if missing
+
+<i> Self-contained script with interactive menu <i/>
 
 ![image](https://github.com/user-attachments/assets/43b2070e-bf0e-4e3e-ac0d-0fcc9094744b)
 ![image](https://github.com/user-attachments/assets/fbc26926-99f1-4918-acc4-0e0295491bb3)
