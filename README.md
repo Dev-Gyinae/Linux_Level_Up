@@ -60,16 +60,14 @@ Includes:
 * Run on-demand backups with progress display
 *  Shows exactly which files are copied
 
-✅ Easy Setup
-Installs cron if missing
-
-<i> Self-contained script with interactive menu <i/>
-
 ![image](https://github.com/user-attachments/assets/43b2070e-bf0e-4e3e-ac0d-0fcc9094744b)
 ![image](https://github.com/user-attachments/assets/fbc26926-99f1-4918-acc4-0e0295491bb3)
 ![image](https://github.com/user-attachments/assets/ed724ef4-b862-4844-ba9c-38f838c8ad17)
 
+✅ Easy Setup
+Installs cron if missing
 
+<i> Self-contained script with interactive menu <i/>
 
 -----------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------
