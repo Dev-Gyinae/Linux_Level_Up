@@ -1,7 +1,7 @@
 # Linux_Level_Up
 
------- Project 1: Network Packet Monitoring (packet_stats.sh) ---------
------------------------------------------------------
+Project 1: Network Packet Monitoring (packet_stats.sh)
+-------------------------------------------------------------------
 This script monitors network traffic on a specific port for 3 seconds and reports the number of packets transmitted. Useful for checking active connections, debugging services, or monitoring suspicious activity.
 
 sudo ./port_monitor.sh PORT_NUMBER eg.  sudo ./port_monitor.sh 8080
@@ -11,8 +11,10 @@ sudo ./port_monitor.sh PORT_NUMBER eg.  sudo ./port_monitor.sh 8080
 
 (Root access is necessary because of TCPdumps scanning)
 
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
 
------- Project 2: Password Generator (genpass.sh)   ---------
+Project 2: Password Generator (genpass.sh) 
 -----------------------------------------------------------------------
 This Bash script generates strong, random 12-character passwords that meet the following security requirements:
   * At least 1 digit (0-9)
@@ -22,6 +24,8 @@ This Bash script generates strong, random 12-character passwords that meet the f
 
 ![image](https://github.com/user-attachments/assets/1ffd1fd2-631d-41d2-89e8-b4cc355f561d)
 
+-----------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 
------- Project 3:    ---------
+Project 3:
 -----------------------------------------------------------------------
