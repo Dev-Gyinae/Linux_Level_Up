@@ -1,44 +1,27 @@
 #!/bin/bash
 
-# Check if a port number was provided
-if [ $# -ne 1 ]; then
-    echo "Usage: $0 <port_number>"
-    exit 1
-fi
-
+[ $# -ne 1 ] && { echo "Usage: $0 <port>"; exit 1; }
 port=$1
 
-# Verify the port is a valid number
-if ! [[ "$port" =~ ^[0-9]+$ ]] || [ "$port" -lt 1 ] || [ "$port" -gt 65535 ]; then
-    echo "Error: Invalid port number. Must be between 1 and 65535."
-    exit 1
+# Validate port
+[[ ! "$port" =~ ^[0-9]+$ ]] && { echo "Invalid port number"; exit 1; }
+
+# Network interfaces header
+echo -e "\n\033[1mNETWORK INTERFACES\033[0m"
+ip -brief a
+
+# Traffic monitoring
+echo -e "\n\033[1mMONITORING PORT $port FOR 5 SECONDS\033[0m"
+count=$(timeout 5 tcpdump -i any -nn "port $port" 2>/dev/null | grep -c "IP ")
+
+# Results
+echo -e "\n\033[1mRESULT\033[0m"
+if [ "$count" -gt 0 ]; then
+    echo "Detected $count packets on port $port"
+else
+    echo "No packets detected on port $port"
+    echo -e "\n\033[1mNOTE\033[0m: If expecting traffic:"
+    echo "- Service may be containerized (check with 'docker ps')"
+    echo "- Try monitoring specific interface:"
+    echo "  sudo tcpdump -i lo -nn port $port -c 5"
 fi
-
-# Check if tcpdump is available
-if ! command -v tcpdump >/dev/null 2>&1; then
-    echo "Error: tcpdump is required but not installed."
-    echo "You can install it with: sudo apt install tcpdump"
-    exit 1
-fi
-
-# Check if we have sufficient privileges
-if [ "$(id -u)" -ne 0 ]; then
-    echo "Warning: This script might require root privileges to capture network traffic."
-    echo "Trying to proceed, but packet count might be incomplete..."
-fi
-
-# Temporary file for tcpdump output
-tempfile=$(mktemp)
-
-# Start tcpdump in background
-echo "Monitoring traffic on port $port for 3 seconds..."
-timeout 3 tcpdump -i any "port $port" -w "$tempfile" >/dev/null 2>&1
-
-# Count packets using tcpdump reading its own capture file
-packet_count=$(tcpdump -r "$tempfile" 2>/dev/null | wc -l)
-packet_count=$((packet_count - 1)) # Subtract the header line
-
-# Clean up
-rm -f "$tempfile"
-
-echo "Packet count on port $port: $packet_count"
