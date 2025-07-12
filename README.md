@@ -1,4 +1,4 @@
-# Linux_Level_Up
+# Linux_Level_Up Project
 
 Project 1: Network Packet Monitoring (packet_stats.sh)
 -------------------------------------------------------------------
