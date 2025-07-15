@@ -16,7 +16,7 @@ sudo ./port_monitor.sh PORT_NUMBER eg.  sudo ./port_monitor.sh 8080
 
 Project 2: Password Generator (genpass.sh) 
 -----------------------------------------------------------------------
-This Bash script generates strong, random 12-character passwords that meet the following security requirements:
+This Bash script generates strong, random 12-character passwords that meet the following security requirements by combining the following:
   * At least 1 digit (0-9)
   * At least 1 lowercase letter (a-z)
   * At least 1 uppercase letter (A-Z)
