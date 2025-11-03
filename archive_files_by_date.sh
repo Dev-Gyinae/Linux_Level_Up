@@ -27,3 +27,5 @@ find "$SOURCE_DIR" -type f -newermt "$FROM_DATE" ! -newermt "$(date -d "$TO_DATE
   -exec rsync -a --relative {} "$OUTPUT_DIR" \;
 
 echo "Files copied to: $OUTPUT_DIR"
+
+
