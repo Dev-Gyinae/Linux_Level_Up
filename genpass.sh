@@ -29,4 +29,5 @@ generate_password() {
 }
 
 # Main execution
+echo "your password is: "
 generate_password
