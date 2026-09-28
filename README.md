@@ -71,3 +71,4 @@ Installs cron if missing
 
 -----------------------------------------------------------------------------------------------------------
 
+Today i learnt the ls -R command used to browse through the directories and their sub directory contents at once
